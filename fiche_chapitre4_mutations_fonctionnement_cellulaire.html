@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les mutations et le fonctionnement cellulaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        .intro {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .intro-questions {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .sub-section {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .conclusion {
+            background-color: #e8f6f3;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .keywords {
+            background-color: #fef9e7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .keyword {
+            margin-bottom: 10px;
+        }
+        .keyword-term {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .exercises {
+            margin-top: 30px;
+        }
+        .exercise {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .exercise-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin-bottom: 5px;
+        }
+        .answer {
+            margin-top: 10px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .texte-trou {
+            line-height: 2;
+        }
+        .trou {
+            display: inline-block;
+            width: 150px;
+            border-bottom: 1px solid #333;
+            margin: 0 5px;
+        }
+        .true-false {
+            margin-bottom: 10px;
+        }
+        .true-false-answer {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .short-question {
+            margin-bottom: 15px;
+        }
+        .short-answer {
+            margin-top: 5px;
+            color: #27ae60;
+        }
+        .toggle-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .toggle-button:hover {
+            background-color: #2980b9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Les mutations et le fonctionnement cellulaire</h1>
+        
+        <div class="intro">
+            <p>Les cellules sont les unités fondamentales de tous les organismes vivants. Elles contiennent un matériel génétique, l'ADN, qui dirige toutes leurs activités. Cependant, cet ADN peut subir des modifications appelées mutations. Ces mutations peuvent avoir des conséquences variées sur le fonctionnement cellulaire, allant de changements mineurs à des altérations graves comme le cancer.</p>
+            <div class="intro-questions">
+                <p>Qu'est-ce qu'une mutation ? Comment se produisent-elles ? Quelles sont leurs conséquences sur le fonctionnement cellulaire, notamment dans le cas du cancer ?</p>
+            </div>
+        </div>
+        
+        <h2>Objectif terminal</h2>
+        <p>Déterminer les conséquences des mutations sur le fonctionnement cellulaire</p>
+        
+        <h2>Développement</h2>
+        
+        <div class="section">
+            <h3>1. Les différents types de mutations sur le gène et sur la protéine</h3>
+            <p>Les mutations sont des modifications permanentes de la séquence d'ADN. Elles peuvent être classées en plusieurs catégories selon leur nature et leur étendue.</p>
+            
+            <div class="sub-section">
+                <h4>1.1. Les mutations ponctuelles</h4>
+                <p>Les mutations ponctuelles sont des modifications qui affectent un seul nucléotide ou quelques nucléotides. On distingue :</p>
+                <ul>
+                    <li>Les substitutions : remplacement d'un nucléotide par un autre</li>
+                    <li>Les insertions : ajout d'un ou plusieurs nucléotides</li>
+                    <li>Les délétions : perte d'un ou plusieurs nucléotides</li>
+                </ul>
+                <p>Ces mutations peuvent avoir différentes conséquences sur la protéine codée par le gène :</p>
+                <ul>
+                    <li>Mutation silencieuse : pas de changement dans la séquence d'acides aminés</li>
+                    <li>Mutation faux-sens : changement d'un acide aminé</li>
+                    <li>Mutation non-sens : introduction d'un codon stop prématuré</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>1.2. Les mutations chromosomiques</h4>
+                <p>Les mutations chromosomiques sont des modifications plus importantes qui affectent la structure des chromosomes :</p>
+                <ul>
+                    <li>Les délétions : perte d'un segment chromosomique</li>
+                    <li>Les duplications : répétition d'un segment chromosomique</li>
+                    <li>Les inversions : changement d'orientation d'un segment chromosomique</li>
+                    <li>Les translocations : échange de segments entre deux chromosomes</li>
+                </ul>
+                <p>Ces mutations peuvent entraîner des changements importants dans l'expression des gènes et la structure des protéines.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>2. Mécanisme de cancérisation</h3>
+            <p>Le cancer est une maladie caractérisée par une prolifération cellulaire anarchique. Il résulte de l'accumulation de mutations dans des gènes clés qui contrôlent la division cellulaire, la réparation de l'ADN et la mort cellulaire programmée.</p>
+            
+            <div class="sub-section">
+                <h4>2.1. Initiation</h4>
+                <p>L'initiation est la première étape de la cancérisation. Elle correspond à l'apparition de mutations irréversibles dans l'ADN d'une cellule. Ces mutations peuvent être causées par :</p>
+                <ul>
+                    <li>Des agents mutagènes (rayons UV, substances chimiques, radiations)</li>
+                    <li>Des erreurs lors de la réplication de l'ADN</li>
+                    <li>Des facteurs héréditaires</li>
+                </ul>
+                <p>Ces mutations touchent généralement des gènes appelés proto-oncogènes ou gènes suppresseurs de tumeurs.</p>
+            </div>
+            
+            <div class="sub-section">
+                <h4>2.2. Promotion / Angiogenèse</h4>
+                <p>La promotion est la deuxième étape de la cancérisation. Elle correspond à la multiplication anarchique des cellules initiées. Cette étape est réversible et peut être favorisée par des promoteurs de tumeurs.</p>
+                <p>L'angiogenèse est la formation de nouveaux vaisseaux sanguins qui permettent d'apporter l'oxygène et les nutriments nécessaires à la croissance tumorale.</p>
+            </div>
+            
+            <div class="sub-section">
+                <h4>2.3. Progression</h4>
+                <p>La progression est la troisième étape de la cancérisation. Elle correspond à la transformation des cellules en cellules malignes. Les cellules cancéreuses acquièrent de nouvelles caractéristiques :</p>
+                <ul>
+                    <li>Capacité à envahir les tissus voisins</li>
+                    <li>Résistance aux mécanismes de défense de l'organisme</li>
+                    <li>Instabilité génétique accrue</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>2.4. Invasion</h4>
+                <p>L'invasion est la quatrième étape de la cancérisation. Elle correspond à la prolifération des cellules cancéreuses vers les tissus voisins. Les cellules cancéreuses acquièrent la capacité à se déplacer et à traverser les membranes basales.</p>
+            </div>
+            
+            <div class="sub-section">
+                <h4>2.5. Métastase</h4>
+                <p>La métastase est la dernière étape de la cancérisation. Elle correspond à la migration des cellules cancéreuses à distance de la tumeur primitive et à la formation de nouvelles tumeurs. Les cellules cancéreuses peuvent voyager par voie sanguine ou lymphatique pour coloniser d'autres organes.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. Quelques types de cancers</h3>
+            <p>Il existe de nombreux types de cancers, classés selon le type de cellules dont ils proviennent.</p>
+            
+            <div class="sub-section">
+                <h4>3.1. Carcinomes</h4>
+                <p>Les carcinomes sont des cancers qui se développent à partir des cellules épithéliales. Ils représentent environ 80-90% de tous les cancers. Exemples :</p>
+                <ul>
+                    <li>Cancer du sein</li>
+                    <li>Cancer de la prostate</li>
+                    <li>Cancer du poumon</li>
+                    <li>Cancer du colon</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>3.2. Sarcomes</h4>
+                <p>Les sarcomes sont des cancers qui se développent à partir des tissus conjonctifs (os, cartilage, muscle, graisse). Ils sont plus rares que les carcinomes. Exemple :</p>
+                <ul>
+                    <li>Cancer des os (ostéosarcome)</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>3.3. Leucémies</h4>
+                <p>Les leucémies sont des cancers qui se développent à partir des cellules sanguines. Elles affectent généralement la moelle osseuse et le système lymphatique. Exemple :</p>
+                <ul>
+                    <li>Leucémie myéloïde aiguë</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>3.4. Lymphomes</h4>
+                <p>Les lymphomes sont des cancers qui se développent à partir des cellules du système lymphatique. Exemples :</p>
+                <ul>
+                    <li>Cancer des ganglions lymphatiques</li>
+                    <li>Cancer de la rate</li>
+                    <li>Cancer du thymus</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>4. Les facteurs de risque</h3>
+            <p>Le développement du cancer est favorisé par de nombreux facteurs de risque.</p>
+            
+            <div class="sub-section">
+                <h4>4.1. Facteurs génétiques</h4>
+                <p>Certaines personnes ont une prédisposition génétique au cancer. Elles héritent de mutations qui augmentent leur risque de développer certains types de cancers. Exemples :</p>
+                <ul>
+                    <li>Mutations des gènes BRCA1 et BRCA2 (cancer du sein et de l'ovaire)</li>
+                    <li>Syndrome de Lynch (cancer colorectal)</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>4.2. Facteurs hormonaux</h4>
+                <p>Les hormones peuvent influencer le développement de certains cancers. Exemples :</p>
+                <ul>
+                    <li>Œstrogènes (cancer du sein, de l'endomètre)</li>
+                    <li>Androgènes (cancer de la prostate)</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>4.3. Âge</h4>
+                <p>Le risque de cancer augmente avec l'âge. Cela s'explique par l'accumulation de mutations au fil du temps et par l'affaiblissement du système immunitaire.</p>
+            </div>
+            
+            <div class="sub-section">
+                <h4>4.4. Facteurs environnementaux</h4>
+                <p>L'environnement peut exposer les individus à des substances cancérigènes. Exemples :</p>
+                <ul>
+                    <li>Tabac</li>
+                    <li>Alcool</li>
+                    <li>Rayonnements UV</li>
+                    <li>Polluants atmosphériques</li>
+                    <li>Amiante</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>4.5. Facteurs infectieux</h4>
+                <p>Certaines infections peuvent augmenter le risque de cancer. Exemples :</p>
+                <ul>
+                    <li>Virus du papillome humain (HPV) (cancer du col de l'utérus)</li>
+                    <li>Virus de l'hépatite B et C (cancer du foie)</li>
+                    <li>Helicobacter pylori (cancer de l'estomac)</li>
+                </ul>
+            </div>
+            
+            <div class="sub-section">
+                <h4>4.6. Modes de vie</h4>
+                <p>Certains comportements peuvent augmenter le risque de cancer. Exemples :</p>
+                <ul>
+                    <li>Tabagisme</li>
+                    <li>Consommation excessive d'alcool</li>
+                    <li>Alimentation déséquilibrée</li>
+                    <li>Sédentarité</li>
+                    <li>Obésité</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="conclusion">
+            <p>Les mutations sont des modifications de l'ADN qui peuvent avoir des conséquences variées sur le fonctionnement cellulaire. L'accumulation de mutations dans des gènes clés peut conduire au développement de cancers, caractérisés par une prolifération cellulaire anarchique.</p>
+        </div>
+        
+        <div class="keywords">
+            <h3>Mots clés et concepts clés</h3>
+            <div class="keyword">
+                <span class="keyword-term">Mutation :</span> Modification permanente de la séquence d'ADN
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Mutation ponctuelle :</span> Modification affectant un seul nucléotide ou quelques nucléotides
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Mutation chromosomique :</span> Modification affectant la structure des chromosomes
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Cancer :</span> Maladie caractérisée par une prolifération cellulaire anarchique
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Oncogène :</span> Gène qui, lorsqu'il est muté, favorise le développement du cancer
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Gène suppresseur de tumeur :</span> Gène qui, lorsqu'il est muté, ne peut plus empêcher le développement du cancer
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Métastase :</span> Formation de tumeurs secondaires à distance de la tumeur primitive
+            </div>
+            <div class="keyword">
+                <span class="keyword-term">Angiogenèse :</span> Formation de nouveaux vaisseaux sanguins
+            </div>
+        </div>
+        
+        <div class="exercises">
+            <h2>Exercices</h2>
+            
+            <div class="exercise">
+                <div class="exercise-title">Exercice 1 : QCM</div>
+                <p>Choisissez la bonne réponse pour chaque question.</p>
+                
+                <div class="question">
+                    <p>1. Une mutation qui remplace un nucléotide par un autre est appelée :</p>
+                    <div class="options">
+                        <div class="option">a) Insertion</div>
+                        <div class="option">b) Délétion</div>
+                        <div class="option">c) Substitution</div>
+                        <div class="option">d) Inversion</div>
+                    </div>
+                    <button class="toggle-button" onclick="toggleAnswer('qcm1')">Voir la réponse</button>
+                    <div id="qcm1" class="answer hidden">c) Substitution</div>
+                </div>
+                
+                <div class="question">
+                    <p>2. Le cancer est caractérisé par :</p>
+                    <div class="options">
+                        <div class="option">a) Une mort cellulaire programmée</div>
+                        <div class="option">b) Une prolifération cellulaire anarchique</div>
+                        <div class="option">c) Une réparation de l'ADN efficace</div>
+                        <div class="option">d) Une différenciation cellulaire accrue</div>
+                    </div>
+                    <button class="toggle-button" onclick="toggleAnswer('qcm2')">Voir la réponse</button>
+                    <div id="qcm2" class="answer hidden">b) Une prolifération cellulaire anarchique</div>
+                </div>
+                
+                <div class="question">
+                    <p>3. L'étape de la cancérisisation qui correspond à la formation de nouveaux vaisseaux sanguins est :</p>
+                    <div class="options">
+                        <div class="option">a) L'initiation</div>
+                        <div class="option">b) La promotion</div>
+                        <div class="option">c) L'angiogenèse</div>
+                        <div class="option">d) La progression</div>
+                    </div>
+                    <button class="toggle-button" onclick="toggleAnswer('qcm3')">Voir la réponse</button>
+                    <div id="qcm3" class="answer hidden">c) L'angiogenèse</div>
+                </div>
+                
+                <div class="question">
+                    <p>4. Les carcinomes sont des cancers qui se développent à partir :</p>
+                    <div class="options">
+                        <div class="option">a) Des cellules sanguines</div>
+                        <div class="option">b) Des cellules épithéliales</div>
+                        <div class="option">c) Des tissus conjonctifs</div>
+                        <div class="option">d) Des cellules nerveuses</div>
+                    </div>
+                    <button class="toggle-button" onclick="toggleAnswer('qcm4')">Voir la réponse</button>
+                    <div id="qcm4" class="answer hidden">b) Des cellules épithéliales</div>
+                </div>
+                
+                <div class="question">
+                    <p>5. Un facteur de risque génétique du cancer du sein est :</p>
+                    <div class="options">
+                        <div class="option">a) Le tabagisme</div>
+                        <div class="option">b) L'exposition aux rayons UV</div>
+                        <div class="option">c) La mutation des gènes BRCA1 et BRCA2</div>
+                        <div class="option">d) L'infection par le virus de l'hépatite B</div>
+                    </div>
+                    <button class="toggle-button" onclick="toggleAnswer('qcm5')">Voir la réponse</button>
+                    <div id="qcm5" class="answer hidden">c) La mutation des gènes BRCA1 et BRCA2</div>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <div class="exercise-title">Exercice 2 : Texte à trou</div>
+                <p>Complétez le texte suivant avec les mots appropriés.</p>
+                
+                <div class="texte-trou">
+                    <p>Le <span class="trou" id="trou1"></span> est une maladie caractérisée par une prolifération cellulaire anarchique. Il résulte de l'accumulation de <span class="trou" id="trou2"></span> dans des gènes clés qui contrôlent la division cellulaire. La première étape de la cancérisation est l'<span class="trou" id="trou3"></span>, qui correspond à l'apparition de mutations irréversibles dans l'ADN. Ces mutations touchent généralement des <span class="trou" id="trou4"></span> ou des <span class="trou" id="trou5"></span>. La deuxième étape est la <span class="trou" id="trou6"></span>, qui correspond à la multiplication anarchique des cellules initiées. La formation de nouveaux vaisseaux sanguins, appelée <span class="trou" id="trou7"></span>, permet d'apporter l'oxygène et les nutriments nécessaires à la croissance tumorale. La dernière étape est la <span class="trou" id="trou8"></span>, qui correspond à la migration des cellules cancéreuses à distance de la tumeur primitive.</p>
+                </div>
+                
+                <button class="toggle-button" onclick="toggleTexteTrou()">Voir les réponses</button>
+                <div id="texte-trou-reponses" class="hidden">
+                    <p><strong>Réponses :</strong></p>
+                    <p>1. cancer</p>
+                    <p>2. mutations</p>
+                    <p>3. initiation</p>
+                    <p>4. oncogènes</p>
+                    <p>5. gènes suppresseurs de tumeurs</p>
+                    <p>6. promotion</p>
+                    <p>7. angiogenèse</p>
+                    <p>8. métastase</p>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <div class="exercise-title">Exercice 3 : Vrai ou Faux</div>
+                <p>Indiquez si chaque affirmation est vraie (V) ou fausse (F).</p>
+                
+                <div class="true-false">
+                    <p>1. Les mutations ponctuelles affectent toujours la séquence d'acides aminés de la protéine.</p>
+                    <span class="true-false-answer incorrect">Faux</span>
+                    <button class="toggle-button" onclick="toggleAnswer('vf1')">Voir l'explication</button>
+                    <div id="vf1" class="hidden">Les mutations silencieuses ne changent pas la séquence d'acides aminés</div>
+                </div>
+                
+                <div class="true-false">
+                    <p>2. Les sarcomes sont des cancers qui se développent à partir des cellules épithéliales.</p>
+                    <span class="true-false-answer incorrect">Faux</span>
+                    <button class="toggle-button" onclick="toggleAnswer('vf2')">Voir l'explication</button>
+                    <div id="vf2" class="hidden">Les sarcomes se développent à partir des tissus conjonctifs</div>
+                </div>
+                
+                <div class="true-false">
+                    <p>3. L'initiation est une étape réversible de la cancérisation.</p>
+                    <span class="true-false-answer incorrect">Faux</span>
+                    <button class="toggle-button" onclick="toggleAnswer('vf3')">Voir l'explication</button>
+                    <div id="vf3" class="hidden">L'initiation est irréversible, la promotion est réversible</div>
+                </div>
+                
+                <div class="true-false">
+                    <p>4. Le risque de cancer diminue avec l'âge.</p>
+                    <span class="true-false-answer incorrect">Faux</span>
+                    <button class="toggle-button" onclick="toggleAnswer('vf4')">Voir l'explication</button>
+                    <div id="vf4" class="hidden">Le risque de cancer augmente avec l'âge</div>
+                </div>
+                
+                <div class="true-false">
+                    <p>5. Le tabagisme est un facteur de risque de cancer.</p>
+                    <span class="true-false-answer correct">Vrai</span>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <div class="exercise-title">Exercice 4 : Questions courtes</div>
+                <p>Répondez brièvement aux questions suivantes.</p>
+                
+                <div class="short-question">
+                    <p>1. Qu'est-ce qu'une mutation ?</p>
+                    <button class="toggle-button" onclick="toggleAnswer('sq1')">Voir la réponse</button>
+                    <div id="sq1" class="short-answer hidden">Une mutation est une modification permanente de la séquence d'ADN.</div>
+                </div>
+                
+                <div class="short-question">
+                    <p>2. Quelles sont les conséquences possibles d'une mutation ponctuelle sur la protéine ?</p>
+                    <button class="toggle-button" onclick="toggleAnswer('sq2')">Voir la réponse</button>
+                    <div id="sq2" class="short-answer hidden">Les conséquences possibles d'une mutation ponctuelle sur la protéine sont : mutation silencieuse (pas de changement), mutation faux-sens (changement d'un acide aminé), mutation non-sens (introduction d'un codon stop prématuré).</div>
+                </div>
+                
+                <div class="short-question">
+                    <p>3. Quelles sont les étapes de la cancérisation ?</p>
+                    <button class="toggle-button" onclick="toggleAnswer('sq3')">Voir la réponse</button>
+                    <div id="sq3" class="short-answer hidden">Les étapes de la cancérisation sont : initiation, promotion/angiogenèse, progression, invasion, métastase.</div>
+                </div>
+                
+                <div class="short-question">
+                    <p>4. Qu'est-ce qu'une métastase ?</p>
+                    <button class="toggle-button" onclick="toggleAnswer('sq4')">Voir la réponse</button>
+                    <div id="sq4" class="short-answer hidden">Une métastase est la formation de tumeurs secondaires à distance de la tumeur primitive, suite à la migration de cellules cancéreuses par voie sanguine ou lymphatique.</div>
+                </div>
+                
+                <div class="short-question">
+                    <p>5. Citez trois facteurs de risque de cancer.</p>
+                    <button class="toggle-button" onclick="toggleAnswer('sq5')">Voir la réponse</button>
+                    <div id="sq5" class="short-answer hidden">Trois facteurs de risque de cancer sont : facteurs génétiques (mutations des gènes BRCA1 et BRCA2), facteurs environnementaux (tabac, rayonnements UV), facteurs liés aux modes de vie (alimentation déséquilibrée, sédentarité).</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+        
+        function toggleTexteTrou() {
+            var reponses = document.getElementById('texte-trou-reponses');
+            var trous = ['trou1', 'trou2', 'trou3', 'trou4', 'trou5', 'trou6', 'trou7', 'trou8'];
+            var mots = ['cancer', 'mutations', 'initiation', 'oncogènes', 'gènes suppresseurs de tumeurs', 'promotion', 'angiogenèse', 'métastase'];
+            
+            if (reponses.classList.contains('hidden')) {
+                reponses.classList.remove('hidden');
+                for (var i = 0; i < trous.length; i++) {
+                    document.getElementById(trous[i]).textContent = mots[i];
+                }
+            } else {
+                reponses.classList.add('hidden');
+                for (var i = 0; i < trous.length; i++) {
+                    document.getElementById(trous[i]).textContent = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
