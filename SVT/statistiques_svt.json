@@ -1,0 +1,145 @@
+{
+  "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT",
+  "dateAnalyse": "2025-09-22",
+  "statistiquesGlobales": {
+    "totalFichiers": 20,
+    "totalRepertoires": 2,
+    "totalFiches": 4,
+    "totalSujets": 1,
+    "totalCahiers": 4,
+    "totalNiveaux": 7
+  },
+  "niveauxScolaires": [
+    {
+      "nom": "6eme",
+      "type": "fichier_index",
+      "fichiers": 1,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\6eme.html"
+    },
+    {
+      "nom": "5eme",
+      "type": "fichier_index",
+      "fichiers": 1,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\5eme.html"
+    },
+    {
+      "nom": "4eme",
+      "type": "fichier_index",
+      "fichiers": 1,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\4eme.html"
+    },
+    {
+      "nom": "3eme",
+      "type": "fichier_index",
+      "fichiers": 1,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\3eme.html"
+    },
+    {
+      "nom": "Seconde",
+      "type": "repertoire",
+      "fichiers": 7,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde",
+      "ressources": {
+        "fiches": 1,
+        "sujets": 0,
+        "cahiers": 2
+      }
+    },
+    {
+      "nom": "1re",
+      "type": "fichier_index",
+      "fichiers": 1,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\1re.html"
+    },
+    {
+      "nom": "Terminale",
+      "type": "repertoire",
+      "fichiers": 6,
+      "hasContenu": true,
+      "chemin": "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale",
+      "ressources": {
+        "fiches": 3,
+        "sujets": 1,
+        "cahiers": 2
+      }
+    }
+  ],
+  "ressourcesParType": {
+    "fiches": 4,
+    "sujets": 1,
+    "cahiers": 4
+  },
+  "ressourcesParNiveau": {
+    "6eme": {
+      "fiches": 0,
+      "sujets": 0,
+      "cahiers": 0,
+      "fichiersIndex": 1
+    },
+    "5eme": {
+      "fiches": 0,
+      "sujets": 0,
+      "cahiers": 0,
+      "fichiersIndex": 1
+    },
+    "4eme": {
+      "fiches": 0,
+      "sujets": 0,
+      "cahiers": 0,
+      "fichiersIndex": 1
+    },
+    "3eme": {
+      "fiches": 0,
+      "sujets": 0,
+      "cahiers": 0,
+      "fichiersIndex": 1
+    },
+    "Seconde": {
+      "fiches": 1,
+      "sujets": 0,
+      "cahiers": 2,
+      "fichiersIndex": 1,
+      "autresControles": 3
+    },
+    "1re": {
+      "fiches": 0,
+      "sujets": 0,
+      "cahiers": 0,
+      "fichiersIndex": 1
+    },
+    "Terminale": {
+      "fiches": 3,
+      "sujets": 1,
+      "cahiers": 2,
+      "fichiersIndex": 1
+    }
+  },
+  "listeCompleteFichiers": [
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\1re.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\2nde.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\3eme.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\4eme.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\5eme.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\6eme.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\cahier type chap 1.docx",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\~$ntrole 1 gaz naturel ROC.docx",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\Controle 1 gaz naturel ROC.docx",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\Controle 1 gaz naturel ROC.pdf",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\Controle_2nde_Chapitre1_Gaz_Naturel_Simple.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\Fiche_Lecon_2nde_Chapitre1.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Seconde\\Cahier_2nde_Chapitre1.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Controle_Terminale_Chapitre1_SujetA.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Fiche_Lecon_Terminale_D_Chapitre1.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Fiche_Lecon_Terminale_D_Chapitre2.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Fiche_Lecon_Terminale_D_Chapitre2.txt",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Cahier_Type_Terminale_D_Chapitre1.html",
+    "C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\\Cahier_Type_Terminale_D_Chapitre2.html"
+  ]
+}
