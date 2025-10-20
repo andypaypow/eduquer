@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Laravel & MySQL par Eric</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --code-bg: #2d2d2d;
+            --text-light: #ecf0f1;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--primary-color);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            transition: var(--transition);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: var(--light-bg);
+            border-color: var(--secondary-color);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .step-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-left: 2rem;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--code-bg);
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .code-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .copy-btn {
+            background: var(--success-color);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        /* Command Boxes */
+        .command-box {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid var(--success-color);
+        }
+
+        .command-box strong {
+            color: #3498db;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid var(--warning-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 8px solid var(--warning-color);
+        }
+
+        .warning-box .warning-title {
+            color: var(--warning-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid var(--success-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 8px solid var(--success-color);
+        }
+
+        .success-box .success-title {
+            color: var(--success-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Recipe Section */
+        .recipe-container {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-header {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .recipe-header h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-container {
+                padding: 0 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .step-title {
+                margin-left: 1rem;
+            }
+
+            .nav-tabs {
+                padding: 0.5rem;
+            }
+
+            .nav-tabs .nav-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Syntax Highlighting */
+        .token.comment { color: #6a9955; }
+        .token.string { color: #ce9178; }
+        .token.number { color: #b5cea8; }
+        .token.keyword { color: #c586c0; }
+        .token.function { color: #dcdcaa; }
+        .token.variable { color: #9cdcfe; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-database"></i> Formation Laravel & MySQL</h1>
+            <p class="subtitle">Apprendre à créer et connecter une base de données avec Laravel (sur WAMP)</p>
+            <div class="contact-info">
+                <i class="fab fa-whatsapp"></i> Formation par Eric : <strong>+229 41757682</strong>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation -->
+        <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button" role="tab">
+                    <i class="fas fa-home"></i> Introduction
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="etapes-tab" data-bs-toggle="tab" data-bs-target="#etapes" type="button" role="tab">
+                    <i class="fas fa-list-ol"></i> Étapes
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe" type="button" role="tab">
+                    <i class="fas fa-book"></i> Recette Botanica
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab">
+                    <i class="fas fa-address-book"></i> Contact
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabContent">
+            <!-- Introduction Tab -->
+            <div class="tab-pane fade show active" id="intro" role="tabpanel">
+                <div class="content-section">
+                    <h2 class="section-title"><i class="fas fa-bullseye"></i> Objectif de la Formation</h2>
+
+                    <div class="success-box">
+                        <div class="success-title">
+                            <i class="fas fa-check-circle"></i> Ce que vous allez apprendre
+                        </div>
+                        <ul>
+                            <li>Créer une base de données MySQL avec WAMP</li>
+                            <li>Configurer Laravel pour s'y connecter</li>
+                            <li>Vérifier la connexion en exécutant une migration</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">🎯</div>
+                        <h3 class="step-title">Prérequis</h3>
+                        <p>Assurez-vous d'avoir WAMP installé sur votre machine avant de commencer cette formation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Étapes Tab -->
+            <div class="tab-pane fade" id="etapes" role="tabpanel">
+                <div class="content-section">
+                    <h2 class="section-title"><i class="fas fa-tasks"></i> Guide Complet - Étape par Étape</h2>
+
+                    <!-- Étape 1 -->
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Ouvrir WAMP et vérifier le serveur MySQL</h3>
+
+                        <div class="warning-box">
+                            <div class="warning-title">
+                                <i class="fas fa-exclamation-triangle"></i> Points de vérification
+                            </div>
+                            <ul>
+                                <li>Lance WAMP</li>
+                                <li>L'icône dans la barre doit être verte (tout fonctionne)</li>
+                                <li>Clique dessus → choisis phpMyAdmin</li>
+                                <li>Ou ouvre manuellement : <a href="http://localhost/phpmyadmin" target="_blank">http://localhost/phpmyadmin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2 -->
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Créer la base de données</h3>
+
+                        <p>Dans phpMyAdmin :</p>
+                        <ol>
+                            <li>Clique sur "<strong>Nouvelle base de données</strong>"</li>
+                            <li>Entre un nom, par exemple : <code>laravel_site</code></li>
+                            <li>Laisse le jeu de caractères sur <code>utf8mb4_general_ci</code></li>
+                            <li>Clique sur <strong>Créer</strong></li>
+                        </ol>
+                    </div>
+
+                    <!-- Étape 3 -->
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Configurer Laravel dans le fichier .env</h3>
+
+                        <p>Dans ton projet Laravel, ouvre le fichier <code>.env</code> à la racine.</p>
+                        <p>Modifie la partie base de données comme ceci :</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Fichier .env</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_site
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Étape 4 -->
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Vérifier la configuration</h3>
+
+                        <p>Tu peux ouvrir <code>config/database.php</code> et vérifier que la section mysql est bien comme ceci :</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>config/database.php</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>'mysql' => [
+    'driver' => 'mysql',
+    'host' => env('DB_HOST', '127.0.0.1'),
+    'port' => env('DB_PORT', '3306'),
+    'database' => env('DB_DATABASE', 'forge'),
+    'username' => env('DB_USERNAME', 'forge'),
+    'password' => env('DB_PASSWORD', ''),
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'prefix' => '',
+    'strict' => true,
+    'engine' => null,
+],</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Étape 5 -->
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3 class="step-title">Tester la connexion avec une migration</h3>
+
+                        <p>Ouvre ton terminal dans le projet Laravel et exécute :</p>
+
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Commande :</strong><br>
+                            php artisan migrate
+                        </div>
+
+                        <div class="success-box">
+                            <div class="success-title">
+                                <i class="fas fa-check-circle"></i> Résultat attendu
+                            </div>
+                            <p>🟢 Si tout est bien configuré : Laravel va créer automatiquement les tables :</p>
+                            <ul>
+                                <li>migrations</li>
+                                <li>users</li>
+                                <li>password_reset_tokens</li>
+                                <li>failed_jobs</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <div class="warning-title">
+                                <i class="fas fa-exclamation-triangle"></i> En cas d'erreur
+                            </div>
+                            <p>🔴 Si tu as une erreur du type "Access denied" ou "Unknown database", vérifie :</p>
+                            <ul>
+                                <li>que WAMP est bien lancé</li>
+                                <li>que le nom de ta base correspond exactement à celui du .env</li>
+                                <li>que ton utilisateur et ton mot de passe MySQL sont bons</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3 class="section-title"><i class="fas fa-life-ring"></i> Support</h3>
+                        <p>Si tu as d'autres soucis, envoie juste une photo et je verrai mieux.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Botanica Tab -->
+            <div class="tab-pane fade" id="recipe" role="tabpanel">
+                <div class="content-section">
+                    <h2 class="section-title"><i class="fas fa-seedling"></i> Recette Complète - Projet Botanica</h2>
+
+                    <div class="recipe-container">
+                        <div class="recipe-header">
+                            <h3><i class="fas fa-leaf"></i> BOTANICA</h3>
+                            <p>But : refaire exactement le site laravel_site avec formulaire contact qui enregistre en base.</p>
+                        </div>
+
+                        <h4>📋 Étape 1 - Installations Préalables</h4>
+                        <div class="command-box">
+                            <strong>WAMP installé et icône verte</strong><br>
+                            <strong>Composer installé</strong> (vérifié avec <code>composer -V</code>)
+                        </div>
+
+                        <h4>🔧 Étape 2 - Créer le Projet Laravel</h4>
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Terminal (PowerShell ou cmd) :</strong><br>
+                            cd C:\wamp64\www<br>
+                            composer create-project laravel/laravel laravel_site<br>
+                            cd laravel_site
+                        </div>
+
+                        <h4>🗄️ Étape 3 - Créer la Base de Données</h4>
+                        <ol>
+                            <li>Ouvrir <a href="http://localhost/phpmyadmin" target="_blank">http://localhost/phpmyadmin</a></li>
+                            <li>Nouvelle base → nom : <code>laravel_site</code> → interclassement : <code>utf8mb4_general_ci</code> → Créer</li>
+                        </ol>
+
+                        <h4>⚙️ Étape 4 - Configurer la Connexion</h4>
+                        <p><strong>Fichier C:\wamp64\www\laravel_site\.env</strong></p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>.env</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_site
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+                        </div>
+
+                        <h4>🏗️ Étape 5 - Créer la Table contacts</h4>
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Terminal :</strong><br>
+                            php artisan make:model Contact -m
+                        </div>
+
+                        <p><strong>Fichier de migration</strong> (créé dans database/migrations/) :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Migration contacts</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>public function up()
+{
+    Schema::create('contacts', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('email');
+        $table->text('message');
+        $table->timestamps();
+    });
+}</code></pre>
+                        </div>
+
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Terminal :</strong><br>
+                            php artisan migrate
+                        </div>
+
+                        <h4>🎮 Étape 6 - Créer le Contrôleur</h4>
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Terminal :</strong><br>
+                            php artisan make:controller ContactController
+                        </div>
+
+                        <p><strong>app/Http/Controllers/ContactController.php</strong> :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>ContactController</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Contact;
+
+class ContactController extends Controller
+{
+    public function index()
+    {
+        return view('contact');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'    => 'required|max:255',
+            'email'   => 'required|email',
+            'message' => 'required'
+        ]);
+
+        Contact::create([
+            'name'    => $request->name,
+            'email'   => $request->email,
+            'message' => $request->message
+        ]);
+
+        return back()->with('success', 'Merci pour votre message !');
+    }
+}</code></pre>
+                        </div>
+
+                        <h4>🛡️ Étape 7 - Protéger le Modèle</h4>
+                        <p><strong>app/Models/Contact.php</strong> :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Contact Model</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Contact extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'message',
+    ];
+}</code></pre>
+                        </div>
+
+                        <h4>🎨 Étape 8 - Créer les Vues</h4>
+                        <p><strong>resources/views/layouts/app.blade.php</strong> :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Layout principal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Botanica&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class="navbar navbar-light bg-light"&gt;
+        &lt;div class="container"&gt;
+            &lt;a class="navbar-brand" href="/"&gt;Botanica&lt;/a&gt;
+            &lt;a class="nav-link" href="{{ route('contact.index') }}"&gt;Contact&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;main class="container py-4"&gt;
+        @yield('content')
+    &lt;/main&gt;
+
+    &lt;footer class="bg-light text-center py-3"&gt;
+        © {{ date('Y') }} Botanica
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <p><strong>resources/views/contact.blade.php</strong> :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Vue Contact</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>@extends('layouts.app')
+
+@section('content')
+&lt;div class="container my-5"&gt;
+    &lt;h1 class="text-center mb-4"&gt;Contactez-nous&lt;/h1&gt;
+
+    @if(session('success'))
+        &lt;div class="alert alert-success text-center"&gt;
+            {{ session('success') }}
+        &lt;/div&gt;
+    @endif
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6 mb-4"&gt;
+            &lt;iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.013261981268!2d-122.41941568468213!3d37.77492927975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0f8b3fb%3A0xdaad0d6471b5f35a!2sSan%20Francisco!5e0!3m2!1sfr!2s!4v1600000000000!5m2!1sfr!2s"
+                width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"&gt;
+            &lt;/iframe&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;form action="{{ route('contact.store') }}" method="POST"&gt;
+                @csrf
+                &lt;div class="mb-3"&gt;
+                    &lt;label for="name" class="form-label"&gt;Nom&lt;/label&gt;
+                    &lt;input type="text" class="form-control" name="name" id="name" required&gt;
+                &lt;/div&gt;
+                &lt;div class="mb-3"&gt;
+                    &lt;label for="email" class="form-label"&gt;Adresse e-mail&lt;/label&gt;
+                    &lt;input type="email" class="form-control" name="email" id="email" required&gt;
+                &lt;/div&gt;
+                &lt;div class="mb-3"&gt;
+                    &lt;label for="message" class="form-label"&gt;Message&lt;/label&gt;
+                    &lt;textarea class="form-control" name="message" id="message" rows="4" required&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;button type="submit" class="btn btn-success w-100"&gt;Envoyer&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+@endsection</code></pre>
+                        </div>
+
+                        <h4>🛣️ Étape 9 - Déclarer les Routes</h4>
+                        <p><strong>routes/web.php</strong> - Ajouter à la fin :</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Routes</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copier
+                                </button>
+                            </div>
+                            <pre><code>use App\Http\Controllers\ContactController;
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');</code></pre>
+                        </div>
+
+                        <h4>🧪 Étape 10 - Tester</h4>
+                        <p><strong>Terminal (optionnel mais rassurant) :</strong></p>
+                        <div class="command-box">
+                            <i class="fas fa-terminal"></i> <strong>Commande :</strong><br>
+                            php artisan route:list
+                        </div>
+
+                        <p><strong>Navigateur :</strong></p>
+                        <div class="command-box">
+                            <a href="http://localhost/laravel_site/public/contact" target="_blank">http://localhost/laravel_site/public/contact</a>
+                        </div>
+
+                        <div class="success-box">
+                            <div class="success-title">
+                                <i class="fas fa-check-circle"></i> Résultat Final
+                            </div>
+                            <p>✅ Site fonctionnel avec :</p>
+                            <ul>
+                                <li>Page contact avec carte Google + formulaire</li>
+                                <li>Validation des champs</li>
+                                <li>Enregistrement en base</li>
+                                <li>Message de succès</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div class="tab-pane fade" id="contact" role="tabpanel">
+                <div class="content-section">
+                    <h2 class="section-title"><i class="fas fa-phone-alt"></i> Contact & Support</h2>
+
+                    <div class="step-card">
+                        <div class="step-number">📱</div>
+                        <h3 class="step-title">Formation WhatsApp</h3>
+                        <p><strong>Formateur :</strong> Eric</p>
+                        <p><strong>Téléphone :</strong> <a href="tel:+22941757682" class="btn btn-success">+229 41757682</a></p>
+                        <p>Envoyez une photo de votre écran si vous rencontrez des difficultés.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">💬</div>
+                        <h3 class="step-title">Support Technique</h3>
+                        <p>Pour toute question technique ou problème de configuration :</p>
+                        <ul>
+                            <li>Prenez une capture d'écran de l'erreur</li>
+                            <li>Notez l'étape où vous vous trouvez</li>
+                            <li>Partagez via WhatsApp pour un diagnostic rapide</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">📚</div>
+                        <h3 class="step-title">Ressources Complémentaires</h3>
+                        <ul>
+                            <li>Documentation officielle Laravel</li>
+                            <li>Tutoriels WAMP avancés</li>
+                            <li>Projets pratiques à télécharger</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><i class="fas fa-database"></i> Formation Laravel & MySQL par Eric</p>
+            <p><i class="fab fa-whatsapp"></i> Contact : +229 41757682</p>
+            <p>&copy; 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+
+    <script>
+        // Copy code function
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code').textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copié!';
+                button.style.background = '#27ae60';
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Erreur de copie:', err);
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe step cards
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Initialize Prism for syntax highlighting
+        Prism.highlightAll();
+    </script>
+</body>
+</html>

@@ -1,10 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/HP 360/Desktop/Educalim-main/css/**)",
-      "Read(//c/Users/HP 360/Desktop/Educalim-main/js/**)",
-      "Read(//c/Users/HP 360/Desktop/Educalim-main/**)",
-      "Bash(dir \"C:\\Users\\HP 360\\Desktop\\Educalim-main\\SVT\\Terminale\"\")"
+      "Read(//c/Users/HP 360/Desktop/**)"
     ],
     "deny": [],
     "ask": []
